@@ -3,17 +3,16 @@
 namespace App\NumbsToWords;
 
 
-class Euro
+class Euro extends Currency
 {
     public function getCurrencyText($total)
     {
-        $Sum = sprintf('%01.2f', $total);
-        $number = explode('.', $Sum);
+        $number = $this->explodeCurrency($total);
         $SumZodziais = $this->getSumZodziais($number[0]).' '.$this->getCurrency($number[0]).', '.$number[1].' cnt.';
         return $SumZodziais;
     }
-    
-    public function getLitai($number)
+
+    public function getCurrency($number)
     {
         if ($number == 0)
             return 'eurų';
