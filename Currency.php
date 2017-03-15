@@ -50,4 +50,11 @@ class Currency
 	{
 	 	$centai = explode('.', $skaicius); return $centai[1]; 
 	}
+
+	public function explodeCurrency($total)
+	{
+        $Sum = sprintf('%01.2f', $total);
+        $number = explode('.', $Sum);
+        return $number;
+	}
 }
