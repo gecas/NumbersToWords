@@ -5,6 +5,14 @@ namespace App\NumbsToWords;
 
 class Litas extends Currency
 {
+    public function getCurrencyText($total)
+    {
+        $Sum = sprintf('%01.2f', $total);
+        $number = explode('.', $Sum);
+        $SumZodziais = $this->getSumZodziais($number[0]).' '.$this->getCurrency($number[0]).', '.$number[1].' cnt.';
+        return $SumZodziais;
+    }
+    
     public function getCurrency($number)
     {
         if ($number == 0)
