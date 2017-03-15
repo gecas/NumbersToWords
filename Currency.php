@@ -3,7 +3,7 @@
 namespace App\NumbsToWords;
 
 
-class Sum
+class Currency
 {
 	public function getTrys($skaicius)
 	{
